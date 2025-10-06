@@ -33,7 +33,7 @@ O Azure NetApp Files permite que as empresas migrem e executem seus principais a
 +
 https://docs.netapp.com/us-en/bluexp-copy-sync/concept-cloud-sync.html["Saiba mais sobre Copiar e Sincronizar"^]
 
-* Usando tecnologia orientada por Inteligência Artificial (IA), a Classificação de Dados do NetApp pode ajudar você a entender o contexto dos dados e identificar dados confidenciais que residem em suas contas do Azure NetApp Files .
+* Usando tecnologia orientada por Inteligência Artificial (IA), a NetApp Data Classification pode ajudar você a entender o contexto dos dados e identificar dados confidenciais que residem em suas contas do Azure NetApp Files .
 +
 https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Saiba mais sobre Classificação de Dados"^]
 
@@ -41,7 +41,7 @@ https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.htm
 
 
 
-== Console NetApp
+== NetApp Console
 
 O Azure NetApp Files pode ser acessado por meio do NetApp Console.
 
@@ -49,7 +49,7 @@ O NetApp Console fornece gerenciamento centralizado de serviços de armazenament
 
 Você não precisa de uma licença ou assinatura para começar a usar o NetApp Console e só incorrerá em cobranças quando precisar implantar agentes do Console na sua nuvem para garantir a conectividade com seus sistemas de armazenamento ou serviços de dados do NetApp . No entanto, alguns serviços de dados da NetApp acessíveis pelo Console são licenciados ou baseados em assinatura.
 
-Saiba mais sobre olink:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["Console NetApp"^] .
+Saiba mais sobre olink:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"^] .
 
 
 
@@ -75,7 +75,7 @@ Para problemas de suporte técnico associados ao Azure NetApp Files, use o porta
 
 == Links relacionados
 
-* link:https://bluexp.netapp.com/azure-netapp-files["Site do console NetApp : Azure NetApp Files"^]
+* link:https://bluexp.netapp.com/azure-netapp-files["Site do NetApp Console : Azure NetApp Files"^]
 * link:https://learn.microsoft.com/azure/azure-netapp-files/["Documentação do Azure NetApp Files"^]
 * link:https://docs.netapp.com/us-en/bluexp-copy-sync/index.html["Documentação de cópia e sincronização"^]
 

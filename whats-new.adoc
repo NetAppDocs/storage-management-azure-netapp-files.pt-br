@@ -38,7 +38,7 @@ Para obter detalhes sobre o que mudou, consulte o https://docs.netapp.com/us-en/
 
 === Recursos de rede agora suportados no BlueXP
 
-Ao configurar um volume no Azure NetApp Files do BlueXP, agora você pode indicar recursos de rede.  Isso está alinhado com a funcionalidade disponível no Azure NetApp Files nativo.
+Ao configurar um volume no Azure NetApp Files do BlueXP, agora você pode indicar recursos de rede. Isso está alinhado com a funcionalidade disponível no Azure NetApp Files nativo.
 
 
 
