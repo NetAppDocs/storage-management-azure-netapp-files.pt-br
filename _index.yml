@@ -1,0 +1,33 @@
+---
+indexpage:
+  title: Documentação do Azure NetApp Files
+  summary: O Azure NetApp Files é um serviço de armazenamento de arquivos de alto
+    desempenho nativo do Microsoft Azure para seus principais aplicativos de negócios.  Esta
+    documentação descreve como configurar e gerenciar o Azure NetApp Files usando
+    o NetApp Console.
+  keywords: Azure NetApp Files, netapp console
+  lead: O Azure NetApp Files é um serviço de armazenamento de arquivos de alto desempenho
+    nativo do Microsoft Azure para seus principais aplicativos de negócios.  Esta
+    documentação descreve como configurar e gerenciar o Azure NetApp Files usando
+    o NetApp Console
+  tiles:
+  - title: Começar
+    links:
+    - title: Saiba mais sobre o Azure NetApp Files
+      url: concept-azure-netapp-files.html
+    - title: Início rápido
+      url: task-quick-start.html
+  - title: Usar o Azure NetApp Files
+    links:
+    - title: Criar volumes
+      url: task-create-volumes.html
+    - title: Gerenciar volumes
+      url: task-manage-volumes.html
+  - title: Blogs e comunidade
+    links:
+    - title: Console NetApp
+      url: https://www.netapp.com/console
+    - title: Serviços de dados NetApp
+      url: https://www.netapp.com/data-services/
+    - title: Comunidade NetApp
+      url: https://community.netapp.com/

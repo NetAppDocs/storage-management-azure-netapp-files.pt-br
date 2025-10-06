@@ -1,0 +1,163 @@
+---
+sidebar: sidebar 
+permalink: task-set-up-azure-ad.html 
+keywords: azure netapp files, azure netapp files permissions, azure permissions, active directory, application, ad application, ad app, app, service principal 
+summary: O NetApp Console precisa de permissões para configurar e gerenciar o Azure NetApp Files.  Você pode conceder as permissões necessárias a uma conta do Azure criando e configurando um aplicativo Microsoft Entra e obtendo as credenciais do Azure necessárias para o Console. 
+---
+= Configurar um aplicativo Microsoft Entra
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Console precisa de permissões para configurar e gerenciar o Azure NetApp Files.  Você pode conceder as permissões necessárias a uma conta do Azure criando e configurando um aplicativo Microsoft Entra e obtendo as credenciais do Azure necessárias para o Console.
+
+
+
+== Etapa 1: Crie o aplicativo
+
+Crie um aplicativo Microsoft Entra e uma entidade de serviço que o Console possa usar para controle de acesso baseado em função.
+
+.Antes de começar
+Você deve ter as permissões corretas no Azure para criar um aplicativo do Active Directory e atribuir o aplicativo a uma função. Para mais detalhes, consulte https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Documentação do Microsoft Azure: Permissões necessárias"^] .
+
+.Passos
+. No portal do Azure, abra o serviço *Microsoft Entra ID*.
++
+image:screenshot_azure_ad.png["Uma captura de tela que mostra o serviço do Active Directory no Microsoft Azure."]
+
+. No menu, selecione *Registros de aplicativos*.
+. Crie o aplicativo:
++
+.. Selecione *Novo registro*.
+.. Especifique detalhes sobre o aplicativo:
++
+*** *Nome*: Digite um nome para o aplicativo.
+*** *Tipo de conta*: Selecione um tipo de conta (qualquer um funcionará com o Console).
+*** *URI de redirecionamento*: Você pode deixar em branco.
+
+
+.. Selecione *Registrar*.
+
+
+. Copie o *ID do aplicativo (cliente)* e o *ID do diretório (locatário)*.
++
+image:screenshot_anf_app_ids.gif["Uma captura de tela que mostra o ID do aplicativo (cliente) e o ID do diretório (locatário) para um aplicativo no Microsoft Entra ID."]
+
++
+Ao criar o sistema Azure NetApp Files no Console, você precisa fornecer a ID do aplicativo (cliente) e a ID do diretório (locatário) para o aplicativo. O Console usa os IDs para fazer login programaticamente.
+
+. Crie um segredo do cliente para o aplicativo para que o Console possa usá-lo para autenticar com o Microsoft Entra ID:
++
+.. Selecione *Certificados e segredos > Novo segredo do cliente*.
+.. Forneça uma descrição do segredo e uma duração.
+.. Selecione *Adicionar*.
+.. Copie o valor do segredo do cliente.
++
+image:screenshot_anf_client_secret.gif["Uma captura de tela do portal do Azure que mostra um segredo do cliente para a entidade de serviço do Microsoft Entra."]
+
+
+
+
+
+.Resultado
+Seu aplicativo AD agora está configurado e você deve ter copiado o ID do aplicativo (cliente), o ID do diretório (locatário) e o valor do segredo do cliente.  Você precisa inserir essas informações no Console ao adicionar um sistema Azure NetApp Files .
+
+
+
+== Etapa 2: atribuir uma função ao aplicativo
+
+Você deve vincular a entidade de serviço à sua assinatura do Azure e atribuir a ela uma função personalizada que tenha as permissões necessárias.
+
+.Passos
+. https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles["Crie uma função personalizada no Azure"^] .
++
+As etapas a seguir descrevem como criar a função no portal do Azure.
+
++
+.. Abra a assinatura e selecione *Controle de acesso (IAM)*.
+.. Selecione *Adicionar > Adicionar função personalizada*.
++
+image:screenshot_azure_access_control.gif["Uma captura de tela que mostra as etapas para adicionar uma função personalizada no portal do Azure."]
+
+.. Na aba *Básico*, insira um nome e uma descrição para a função.
+.. Selecione *JSON* e depois *Editar*, que aparece no canto superior direito do formato JSON.
+.. Adicione as seguintes permissões em _ações_:
++
+[source, json]
+----
+"actions": [
+    "Microsoft.NetApp/*",
+    "Microsoft.Resources/resources/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/write",
+    "Microsoft.Network/virtualNetworks/read",
+    "Microsoft.Network/virtualNetworks/subnets/read",
+    "Microsoft.Insights/Metrics/Read"
+    ],
+----
+.. Selecione *Salvar* > *Avançar* e depois *Criar*.
+
+
+. Atribua o aplicativo à função que você acabou de criar:
++
+.. No portal do Azure, abra *Assinaturas*.
+.. Selecione a assinatura.
+.. Selecione *Controle de acesso (IAM) > Adicionar > Adicionar atribuição de função*.
+.. Na aba *Função*, selecione a função personalizada que você criou e então *Avançar*.
+.. Na aba *Membros*, complete os seguintes passos:
++
+*** Mantenha *Usuário, grupo ou entidade de serviço* selecionado.
+*** Selecione *Selecionar membros*.
++
+image:screenshot-azure-anf-role.png["Uma captura de tela do portal do Azure que mostra a guia Membros ao adicionar uma função a um aplicativo."]
+
+*** Pesquise o nome do aplicativo.
++
+Aqui está um exemplo:
+
++
+image:screenshot_anf_app_role.png["Uma captura de tela do portal do Azure que mostra o formulário Adicionar atribuição de função no portal do Azure."]
+
+*** Selecione o aplicativo e depois *Selecionar*.
+*** Selecione *Avançar*.
+
+
+.. Selecione *Revisar + atribuir*.
++
+O principal serviço do Console agora tem as permissões do Azure necessárias para essa assinatura.
+
+
+
+
+
+
+
+== Etapa 3: adicione as credenciais ao console
+
+Ao criar o sistema Azure NetApp Files , você será solicitado a selecionar as credenciais associadas à entidade de serviço.  Você precisa adicionar essas credenciais ao Console antes de criar o sistema.
+
+.Passos
+. Na navegação à esquerda do Console, selecione **Administração** > **Credenciais**.
+. Selecione *Adicionar credenciais* e siga as etapas do assistente.
++
+.. *Localização das credenciais*: Selecione *Microsoft Azure > NetApp Console*.
+.. *Definir credenciais*: insira informações sobre a entidade de serviço do Microsoft Entra que concede as permissões necessárias:
++
+*** Segredo do cliente
+*** ID do aplicativo (cliente)
+*** ID do diretório (inquilino)
++
+Você deveria ter capturado essas informações quando<<create-AD-application,criou o aplicativo AD>> .
+
+
+
+.. *Revisar*: Confirme os detalhes sobre as novas credenciais e selecione *Adicionar*.
+
+
+

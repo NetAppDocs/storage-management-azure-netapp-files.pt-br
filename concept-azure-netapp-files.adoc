@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: concept-azure-netapp-files.html 
+keywords: azure netapp files, cost, price, features, azure netapp files features, anf, supported regions, azure regions, azure netapp files regions 
+summary: O Azure NetApp Files permite que as empresas migrem e executem seus principais aplicativos essenciais para os negócios, com alto desempenho e sensíveis à latência, no Azure, sem necessidade de refatoração para a nuvem. 
+---
+= Saiba mais sobre o Azure NetApp Files
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O Azure NetApp Files permite que as empresas migrem e executem seus principais aplicativos essenciais para os negócios, com alto desempenho e sensíveis à latência, no Azure, sem necessidade de refatoração para a nuvem.
+
+
+
+== Características
+
+* O suporte a vários protocolos permite que aplicativos Linux e Windows sejam executados perfeitamente no Azure.
+* Vários níveis de desempenho permitem um alinhamento próximo com os requisitos de desempenho da carga de trabalho.
+* As principais certificações, incluindo SAP HANA, GDPR e HIPAA, permitem a migração das cargas de trabalho mais exigentes para o Azure.
+
+
+
+
+=== Recursos adicionais no NetApp Console
+
+* Migre dados NFS ou SMB para o Azure NetApp Files diretamente do NetApp Console.  As migrações de dados são fornecidas pelo NetApp Copy and Sync.
++
+https://docs.netapp.com/us-en/bluexp-copy-sync/concept-cloud-sync.html["Saiba mais sobre Copiar e Sincronizar"^]
+
+* Usando tecnologia orientada por Inteligência Artificial (IA), a Classificação de Dados do NetApp pode ajudar você a entender o contexto dos dados e identificar dados confidenciais que residem em suas contas do Azure NetApp Files .
++
+https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Saiba mais sobre Classificação de Dados"^]
+
+
+
+
+
+== Console NetApp
+
+O Azure NetApp Files pode ser acessado por meio do NetApp Console.
+
+O NetApp Console fornece gerenciamento centralizado de serviços de armazenamento e dados da NetApp em ambientes locais e na nuvem em nível empresarial. O Console é necessário para acessar e usar os serviços de dados do NetApp . Como uma interface de gerenciamento, ele permite que você gerencie muitos recursos de armazenamento a partir de uma única interface. Os administradores do console podem controlar o acesso ao armazenamento e aos serviços de todos os sistemas da empresa.
+
+Você não precisa de uma licença ou assinatura para começar a usar o NetApp Console e só incorrerá em cobranças quando precisar implantar agentes do Console na sua nuvem para garantir a conectividade com seus sistemas de armazenamento ou serviços de dados do NetApp . No entanto, alguns serviços de dados da NetApp acessíveis pelo Console são licenciados ou baseados em assinatura.
+
+Saiba mais sobre olink:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["Console NetApp"^] .
+
+
+
+== Custo
+
+https://azure.microsoft.com/pricing/details/netapp/["Veja os preços do Azure NetApp Files"^]
+
+A assinatura e a cobrança são mantidas pelo serviço Azure NetApp Files , não pelo Console.
+
+
+
+== Regiões suportadas
+
+https://bluexp.netapp.com/cloud-volumes-global-regions["Ver regiões do Azure com suporte"^]
+
+
+
+== Obtendo ajuda
+
+Para problemas de suporte técnico associados ao Azure NetApp Files, use o portal do Azure para registrar uma solicitação de suporte à Microsoft.  Selecione sua assinatura Microsoft associada e selecione o nome do serviço * Azure NetApp Files* em *Armazenamento*.  Forneça as informações restantes necessárias para criar sua solicitação de suporte da Microsoft.
+
+
+
+== Links relacionados
+
+* link:https://bluexp.netapp.com/azure-netapp-files["Site do console NetApp : Azure NetApp Files"^]
+* link:https://learn.microsoft.com/azure/azure-netapp-files/["Documentação do Azure NetApp Files"^]
+* link:https://docs.netapp.com/us-en/bluexp-copy-sync/index.html["Documentação de cópia e sincronização"^]
+

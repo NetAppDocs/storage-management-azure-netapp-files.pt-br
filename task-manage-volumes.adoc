@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: task-manage-volumes.html 
+keywords: azure netapp files, delete volumes, delete nfs volumes, netapp account, capacity pool, change service level 
+summary: Depois de configurar seu sistema, você pode gerenciar contas, pools de capacidade, volumes e instantâneos do Azure NetApp Files . 
+---
+= Gerenciar volumes existentes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode gerenciar volumes existentes conforme suas necessidades de armazenamento mudam.  Você pode editar volumes, alterar o nível de serviço de um volume, gerenciar cópias de Snapshot e excluir volumes.
+
+
+
+== Editar o tamanho e as tags de um volume
+
+Depois de criar um volume, você pode modificar seu tamanho e tags a qualquer momento.
+
+.Passos
+. Abra o sistema.
+. Passe o mouse sobre o volume e selecione *Editar*.
+. Modifique o tamanho e as tags conforme necessário.
+. Selecione *Aplicar*.
+
+
+
+
+== Alterar o nível de serviço do volume
+
+Depois de criar um volume, você pode alterar o nível de serviço a qualquer momento, desde que o pool de capacidade de destino já exista.
+
+.Passos
+. Abra o sistema.
+. Passe o mouse sobre o volume e selecione *Alterar nível de serviço*.
+. Selecione o pool de capacidade que fornece o nível de serviço desejado.
+. Selecione *Alterar*.
+
+
+.Resultado
+O volume é movido para o outro pool de capacidade sem impacto no volume.
+
+
+
+== Gerenciar cópias de instantâneos
+
+Cópias instantâneas fornecem uma cópia pontual do seu volume.  Crie cópias de Snapshot, restaure os dados para um novo volume e exclua cópias de Snapshot.
+
+.Passos
+. Abra o sistema.
+. Passe o mouse sobre o volume e escolha uma das opções disponíveis para gerenciar cópias do Snapshot:
++
+** *Criar uma cópia do Snapshot*
+** *Reverter volume para Snapshot*
+** *Excluir uma cópia do Snapshot*
+
+
+. Siga as instruções para concluir a ação selecionada.
+
+
+
+
+== Excluir volumes
+
+Exclua os volumes que você não precisa mais.
+
+.Passos
+. Abra o sistema.
+. Passe o mouse sobre o volume e selecione *Excluir*.
+. Confirme que você deseja excluir o volume.
+

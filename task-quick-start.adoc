@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start.html 
+keywords: set up azure netapp files, quick start 
+summary: Comece a usar o Azure NetApp Files configurando um aplicativo Microsoft Entra e criando um sistema. 
+---
+= Fluxo de trabalho de introdução
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Comece a usar o Azure NetApp Files configurando um aplicativo Microsoft Entra e criando um sistema.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"] link:task-set-up-azure-ad.html["Configurar um aplicativo Microsoft Entra"]
+[role="quick-margin-para"]
+No Azure, conceda permissões a um aplicativo Microsoft Entra e copie a ID do aplicativo (cliente), a ID do diretório (locatário) e o valor de um segredo do cliente.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"] link:task-create-system.html["Criar um sistema Azure NetApp Files"]
+[role="quick-margin-para"]
+Na página Sistemas no Console do NetApp , selecione *Adicionar sistema* > *Microsoft Azure* > * Azure NetApp Files* e forneça detalhes sobre o aplicativo do Active Directory.

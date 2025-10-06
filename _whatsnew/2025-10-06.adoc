@@ -1,0 +1,13 @@
+= BlueXP agora é NetApp Console
+:allow-uri-read: 
+
+
+
+
+=== BlueXP agora é NetApp Console
+
+O BlueXP foi renomeado e redesenhado para refletir melhor seu papel no gerenciamento de sua infraestrutura de dados.
+
+O NetApp Console fornece gerenciamento centralizado de serviços de armazenamento e dados em ambientes locais e na nuvem em nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada.
+
+Para obter detalhes sobre o que mudou, consulte o https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Notas de versão do NetApp Console"] .

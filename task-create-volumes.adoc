@@ -1,0 +1,87 @@
+---
+sidebar: sidebar 
+permalink: task-create-volumes.html 
+keywords: azure netapp files, create volumes, create nfs volumes, netapp account, capacity pool, create capacity pool, mount path, get mount path, find mount path, mount volume 
+summary: Depois de configurar seu sistema, você pode criar contas, pools de capacidade e volumes do Azure NetApp Files . 
+---
+= Criar e montar volumes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Depois de configurar seu sistema, você pode criar contas, pools de capacidade e volumes do Azure NetApp Files .
+
+
+
+== Criar volumes
+
+Você pode criar volumes NFS ou SMB em uma conta nova ou existente do Azure NetApp Files .
+
+.Antes de começar
+* Se você quiser usar o SMB, precisará configurar o DNS e o Active Directory.
+* Ao planejar criar um volume SMB, você deve ter um servidor Windows Active Directory disponível ao qual possa se conectar.  Você inserirá essas informações ao criar o volume.
+
+
+.Passos
+. Abra o sistema Azure NetApp Files .
+. Selecione *Adicionar novo volume*.
+. Forneça as informações necessárias em cada página:
++
+** * Conta do Azure NetApp Files *: Escolha uma conta existente do Azure NetApp Files ou crie uma nova conta.  Ao criar uma nova conta, você também deve selecionar o grupo de recursos.  Você pode usar um grupo de recursos existente ou criar um novo.
++
+image:screenshot_anf_create_account.png["Uma captura de tela dos campos necessários para criar uma conta do Azure NetApp Files , que inclui um nome, assinatura do Azure, local e grupo de recursos."]
+
+** *Pool de capacidade*: Selecione um pool de capacidade existente ou crie um novo pool de capacidade.
++
+Se você criar um novo pool de capacidade, especifique o tamanho e https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels["nível de serviço"^] .
+
++
+O tamanho mínimo para um pool de capacidade é 1 TB.
+
++
+image:screenshot-create-capacity-pool.png["Captura de tela do menu de criação de pool de capacidade."]
+
+** *Detalhes e tags*: insira o nome e o tamanho do volume, a VNet e a sub-rede onde o volume deve residir e, opcionalmente, especifique tags para o volume.  Escolha a rede *Padrão* ou *Básica*.  *Padrão* suporta recursos de rede virtual (VNet), enquanto *Básico* tem limites de IP reduzidos e nenhum recurso de VNet adicional para o volume. Para obter mais informações, consulte link:https://learn.microsoft.com/azure/azure-netapp-files/configure-network-features["Configurar recursos de rede"^] .
++
+image:screenshot-create-volume.gif["Captura de tela das opções de criação de volume."]
+
+** *Protocolo*: Escolha o protocolo NFS ou SMB e insira as informações necessárias.
++
+Se você escolher NFS, deverá inserir o *Caminho do volume*, escolher a *Versão do NFS* e definir a *Política de exportação*.
+
++
+image:screenshot-protocol-nfs.png["Uma captura de tela dos campos necessários para configurar um volume NFS."]
+
++
+Se você escolher SMB, deverá inserir o **Caminho do volume** e configurar a conectividade SMB com o **Endereço IP primário do DNS** e os detalhes de configuração do Active Directory.
+
++
+image:screenshot-protocol-smb.png["Uma captura de tela dos campos necessários para configurar um volume SMB."]
+
+
+
+. Se você quiser que este volume seja criado com base em um instantâneo de um volume existente, selecione o instantâneo na lista suspensa Nome do instantâneo.
+. Selecione *Adicionar volume*.
+. Depois de criar o volume, você deve prosseguir para<<Volumes de montagem,montar o volume da nuvem>> .
+
+
+
+
+== Volumes de montagem
+
+Acesse as instruções de montagem no NetApp Console para poder montar o volume em um host.
+
+.Passos
+. No NetApp Console, abra o sistema Azure NetApp Files .
+. Mova o cursor sobre o volume e selecione os três pontos `...` ao lado do status do volume.
+. Selecione **Montar o volume**.
++
+image:screenshot-volume-options.png["Uma captura de tela das operações disponíveis quando você passa o cursor sobre um volume."]
+
+. Siga as instruções para montar o volume.
+

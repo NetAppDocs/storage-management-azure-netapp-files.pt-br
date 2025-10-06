@@ -1,0 +1,17 @@
+= Nova permissão necessária
+:allow-uri-read: 
+
+
+
+
+=== Nova permissão necessária
+
+A seguinte permissão agora é necessária para gerenciar volumes do Azure NetApp Files do BlueXP:
+
+Microsoft.Network/virtualNetworks/sub-redes/leitura
+
+Essa permissão é necessária para ler uma sub-rede de rede virtual.
+
+Se você estiver gerenciando o Azure NetApp Files do BlueXP, precisará adicionar essa permissão à função personalizada associada ao aplicativo Microsoft Entra que você criou anteriormente.
+
+https://docs.netapp.com/us-en/bluexp-azure-netapp-files/task-set-up-azure-ad.html["Aprenda a configurar um aplicativo Microsoft Entra e visualizar as permissões de função personalizadas"] .
